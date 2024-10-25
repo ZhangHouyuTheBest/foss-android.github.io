@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5;url=https://linux.do/u/f-droid">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-droid Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url(https://ipgeo-bingpic.hf.space);
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        #content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        img {
+            border-radius: 50%;
+            width: 144px;
+            height: 144px;
+        }
+        footer {
+            position: absolute;
+            bottom: 20px;
+            color: white;
+        }
+    </style>
+    <script>
+        let countdown = 5;
+        function updateCountdown() {
+            document.getElementById("countdown").innerText = countdown;
+            countdown--;
+            if(countdown < 0) {
+                clearInterval(timer);
+            }
+        }
+        let timer = setInterval(updateCountdown, 1000);
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('year').innerText = new Date().getFullYear();
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h1>Welcome to the F-Droid Homepage</h1>
+        <img src="./me.png" alt="F-droid Avatar">
+        <p>This page will automatically redirect in <span id="countdown">5</span> seconds.</p>
+    </div>
+    <footer>
+        Copyright &copy; <span id="year"></span> F-Droid. All rights reserved.
+    </footer>
+</body>
+</html>
